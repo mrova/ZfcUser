@@ -1,32 +1,74 @@
-<h1><?php echo $this->translate('Sign In'); ?></h1>
+		<section id="main_content">
 
-<?php
-$form = $this->loginForm;
-$form->prepare();
-$form->setAttribute('action', $this->url('zfcuser/login'));
-$form->setAttribute('method', 'post');
-?>
+			<div class="box_main box_full_width box_with_header_and_share content_text page_register">
 
-<?php echo $this->form()->openTag($form) ?>
+				<h2 class="title">Logowanie</h2>
 
-    <dl class="zend_form">
-        <?php echo $this->formElementErrors($form->get('identity')) ?>
+				<div class="content">
 
-        <dt><?php echo $this->formLabel($form->get('identity')) ?></dt>
-        <dd><?php echo $this->formInput($form->get('identity')) ?></dd>
+					<div class="content_left">
+						<div class="container">
+							<div class="tt_form">
+							<?php
+								$form = $this->loginForm;
+								$form->prepare();
+								$form->setAttribute('action', $this->url('zfcuser/login'));
+								$form->setAttribute('method', 'post');
+								echo $this->form()->openTag($form)
+							?>
 
-        <dt><?php echo $this->formLabel($form->get('credential')) ?></dt>
-        <dd><?php echo $this->formInput($form->get('credential')) ?></dd>
+								<?php echo $this->formElementErrors($form->get('identity')) ?>
 
-        <?php if ($this->redirect): ?>
-            <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
-        <?php endif ?>
+									<div class="row">
+										<?php echo $this->formLabel($form->get('identity')) ?>
+										<?php echo $this->formInput($form->get('identity')) ?>
+									</div>
+									<div class="row">
+										<?php echo $this->formLabel($form->get('credential')) ?>
+										<?php echo $this->formInput($form->get('credential')) ?>
+									</div>
 
-        <dd><?php echo $this->formButton($form->get('submit')) ?></dd>
-    </dl>
+									<?php if ($this->redirect): ?>
+										<input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
+									<?php endif ?>
 
-<?php echo $this->form()->closeTag() ?>
+									<div class="row">
+										<?php echo $this->formButton($form->get('submit')) ?>
+									</div>
 
-<?php if ($this->enableRegistration) : ?>
-<?php echo $this->translate('Not registered?'); ?> <a href="<?php echo $this->url('zfcuser/register') . ($this->redirect ? '?redirect='.$this->redirect : '') ?>"><?php echo $this->translate('Sign up!'); ?></a>
-<?php endif; ?>
+								<?php echo $this->form()->closeTag() ?>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="content_right">
+						<div class="content_right_top">
+							<div class="container user_text">
+								<h4>Super tekst</h4>
+								<a href="#"><img src="/img/fb_big.png" alt="" /></a>
+								<p>Dajesz dajesz reko gadzeta</p>
+							</div>
+						</div>
+
+						<div class="content_right_bottom">
+							<div class="container user_text">
+								<h2>dlaczego warto założyć konto?</h2>
+								<p>
+								Bo coś<br />
+								Boś coś innego super<br />
+								Bo niespodzianka
+								</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			<?php if ($this->enableRegistration) : ?>
+				<div>
+				<?php echo $this->translate('Not registered?'); ?> <a href="<?php echo $this->url('zfcuser/register') . ($this->redirect ? '?redirect='.$this->redirect : '') ?>"><?php echo $this->translate('Sign up!'); ?></a>
+				</div>
+				<?php endif; ?>
+			</div>
+
+		</section>
