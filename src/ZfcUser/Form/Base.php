@@ -25,7 +25,7 @@ class Base extends ProvidesEventsForm
 		$this->add(array(
 			'name' => 'email',
 			'options' => array(
-				'label' => 'email',
+				'label' => 'e-mail (login)',
 			),
 			'attributes' => array(
 				'type' => 'email',
