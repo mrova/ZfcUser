@@ -42,7 +42,7 @@ class Login extends ProvidesEventsForm
 		$this->add(array(
 			'name' => 'credential',
 			'options' => array(
-				'label' => 'Password',
+				'label' => 'hasło',
 			),
 			'attributes' => array(
 				'type' => 'password',
