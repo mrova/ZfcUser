@@ -23,7 +23,7 @@ class Login extends ProvidesEventsForm
 		$this->add(array(
 			'name' => 'identity',
 			'options' => array(
-				'label' => '',
+				'label' => 'e-mail (login)',
 			),
 			'attributes' => array(
 				'type' => 'email',
