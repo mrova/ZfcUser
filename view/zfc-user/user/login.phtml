@@ -1,10 +1,12 @@
 		<section id="main_content">
 
+		<?php if ($this->flashMessenger()): ?>
 			<div class="box_main box_full_width person_biography content_text">
 				<div class="box_content box_content_padding user_text flashmessages">
 					<?php echo $this->flashMessenger()->render(); ?>
 				</div>
 			</div>
+		<?php endif; ?>
 
 			<div class="box_main box_full_width box_with_header_and_share content_text page_register">
 
