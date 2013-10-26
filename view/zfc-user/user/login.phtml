@@ -1,9 +1,9 @@
 		<section id="main_content">
 
-		<?php if ($this->flashMessenger()->hasMessages()): ?>
+		<?php if ($messages = $this->flashMessenger()->render()): ?>
 			<div class="box_main box_full_width person_biography content_text">
 				<div class="box_content box_content_padding user_text flashmessages">
-					<?php echo $this->flashMessenger()->render(); ?>
+					<?php echo $messages; ?>
 				</div>
 			</div>
 		<?php endif; ?>
