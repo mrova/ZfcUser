@@ -36,6 +36,7 @@ class Register extends Base
 
 		$this->add(array(
 			'name' => 'ar',
+			'type' => 'Zend\Form\Element\Checkbox',
 			'options' => array(
 				'label' => 'Zapoznałem się z <a href="/zasady/regulamin" target="_blank">regulaminen</a> i akceptuję go.',
 			),
@@ -47,6 +48,7 @@ class Register extends Base
 		));
 		$this->add(array(
 			'name' => 'ap',
+			'type' => 'Zend\Form\Element\Checkbox',
 			'options' => array(
 				'label' => 'Zapoznałem się z <a href="/zasady/polityka-prywatnosci" target="_blank">polityką prywatności</a> i akceptuję ją.',
 			),
@@ -56,7 +58,6 @@ class Register extends Base
 				'required' => true
 			),
 		));
-
 
 		$this->get('submit')->setLabel('zarejestruj się');
 		$this->getEventManager()->trigger('init', $this);
