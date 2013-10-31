@@ -23,9 +23,6 @@
 							<?php echo $this->form()->openTag($form) ?>
 
 								<?php foreach ($form as $element): ?>
-									<div>
-										<?php echo get_class($element); ?>
-									</div>
 									<?php if (!($element instanceof Zend\Form\Element\Button) && !($element instanceof Zend\Form\Element\Checkbox)): ?>
 									<div class="row qwe">
 										<?php echo $this->formLabel($element) ?>
@@ -36,7 +33,7 @@
 									</div>
 									<?php elseif ($element instanceof Zend\Form\Element\Checkbox): ?>
 									<div class="row checkbox">
-										<?php echo $this->formButton($element) . $this->formLabel($element) . $this->formElementErrors($element) ?>
+										<?php echo $this->formCheckbox($element) . $this->formLabel($element) . $this->formElementErrors($element) ?>
 									</div>
 									<?php elseif ($element instanceof Zend\Form\Element\Captcha): ?>
 										<?php echo $this->formCaptcha($element) . $this->formElementErrors($element) ?>
