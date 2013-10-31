@@ -31,6 +31,10 @@
 									<div class="row">
 										<?php echo $this->formButton($element) ?>
 									</div>
+									<?php elseif ($element instanceof Zend\Form\Element\Checkbox): ?>
+									<div class="row checkbox">
+										<?php echo $this->formcheckbox($element) ?>
+									</div>
 									<?php elseif ($element instanceof Zend\Form\Element\Captcha): ?>
 										<?php echo $this->formCaptcha($element) . $this->formElementErrors($element) ?>
 									</div>
