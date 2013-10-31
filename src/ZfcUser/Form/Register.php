@@ -36,25 +36,23 @@ class Register extends Base
 
 		$this->add(array(
 			'name' => 'ar',
-			'type' => 'Zend\Form\Element\Checkbox',
 			'options' => array(
 				'label' => 'Zapoznałem się z <a href="/zasady/regulamin" target="_blank">regulaminen</a> i akceptuję go.',
 			),
 			'attributes' => array(
 				'id' => 'ar',
-				'type' => 'checkbox',
+				'type' => 'Zend\Form\Element\Checkbox',
 				'required' => true
 			),
 		));
 		$this->add(array(
 			'name' => 'ap',
-			'type' => 'Zend\Form\Element\Checkbox',
 			'options' => array(
 				'label' => 'Zapoznałem się z <a href="/zasady/polityka-prywatnosci" target="_blank">polityką prywatności</a> i akceptuję ją.',
 			),
 			'attributes' => array(
 				'id' => 'ap',
-				'type' => 'checkbox',
+				'type' => 'Zend\Form\Element\Checkbox',
 				'required' => true
 			),
 		));
