@@ -24,7 +24,7 @@
 
 								<?php foreach ($form as $element): ?>
 									<?php if (!($element instanceof Zend\Form\Element\Button) && !($element instanceof Zend\Form\Element\Checkbox)): ?>
-									<div class="row">
+									<div class="row qwe">
 										<?php echo $this->formLabel($element) ?>
 									<?php endif ?>
 									<?php if ($element instanceof Zend\Form\Element\Button): ?>
@@ -33,8 +33,7 @@
 									</div>
 									<?php elseif ($element instanceof Zend\Form\Element\Checkbox): ?>
 									<div class="row checkbox">
-										<?php echo $this->formButton($element) ?>
-										<?php echo $this->formLabel($element) ?>
+										<?php echo $this->formButton($element) . $this->formLabel($element) . $this->formElementErrors($element) ?>
 									</div>
 									<?php elseif ($element instanceof Zend\Form\Element\Captcha): ?>
 										<?php echo $this->formCaptcha($element) . $this->formElementErrors($element) ?>
