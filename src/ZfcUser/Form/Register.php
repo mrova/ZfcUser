@@ -40,6 +40,7 @@ class Register extends Base
 				'label' => 'Zapoznałem się z <a href="/zasady/regulamin" target="_blank">regulaminen</a> i akceptuję go.',
 			),
 			'attributes' => array(
+				'id' => 'ar',
 				'type' => 'checkbox',
 				'required' => true
 			),
@@ -50,6 +51,7 @@ class Register extends Base
 				'label' => 'Zapoznałem się z <a href="/zasady/polityka-prywatnosci" target="_blank">polityką prywatności</a> i akceptuję ją.',
 			),
 			'attributes' => array(
+				'id' => 'ap',
 				'type' => 'checkbox',
 				'required' => true
 			),
