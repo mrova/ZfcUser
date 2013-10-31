@@ -34,28 +34,25 @@ class Register extends Base
 			$this->add($this->captchaElement, array('name'=>'captcha'));
 		}
 
-		$this->add(array(
-			'name' => 'ar',
-			'options' => array(
-				'label' => 'Zapoznałem się z <a href="/zasady/regulamin" target="_blank">regulaminen</a> i akceptuję go.',
-			),
-			'attributes' => array(
+		$arElement = new \Zend\Form\Element\Checkbox('ar');
+		$arElement
+			->setLabel('Zapoznałem się z <a href="/zasady/regulamin" target="_blank">regulaminen</a> i akceptuję go.')
+			->setAttributes(array(
 				'id' => 'ar',
-				'type' => 'checkbox',
+				'type'  => 'checkbox',
 				'required' => true
-			),
 		));
-		$this->add(array(
-			'name' => 'ap',
-			'options' => array(
-				'label' => 'Zapoznałem się z <a href="/zasady/polityka-prywatnosci" target="_blank">polityką prywatności</a> i akceptuję ją.',
-			),
-			'attributes' => array(
+		$this->add($arElement);
+
+		$apElement = new \Zend\Form\Element\Checkbox('ap');
+		$apElement
+			->setLabel('Zapoznałem się z <a href="/zasady/polityka-prywatnosci" target="_blank">polityką prywatności</a> i akceptuję ją.')
+			->setAttributes(array(
 				'id' => 'ap',
-				'type' => 'checkbox',
+				'type'  => 'checkbox',
 				'required' => true
-			),
 		));
+		$this->add($apElement);
 
 		$this->get('submit')->setLabel('zarejestruj się');
 		$this->getEventManager()->trigger('init', $this);
