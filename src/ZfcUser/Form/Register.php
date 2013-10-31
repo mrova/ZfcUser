@@ -41,7 +41,7 @@ class Register extends Base
 			),
 			'attributes' => array(
 				'id' => 'ar',
-				'type' => 'Zend\Form\Element\Checkbox',
+				'type' => 'checkbox',
 				'required' => true
 			),
 		));
@@ -52,7 +52,7 @@ class Register extends Base
 			),
 			'attributes' => array(
 				'id' => 'ap',
-				'type' => 'Zend\Form\Element\Checkbox',
+				'type' => 'checkbox',
 				'required' => true
 			),
 		));
