@@ -103,6 +103,9 @@ class UserController extends AbstractActionController
 		$this->zfcUserAuthentication()->getAuthAdapter()->resetAdapters();
 		$this->zfcUserAuthentication()->getAuthService()->clearIdentity();
 
+		$this->_setupTitle('Logowanie');
+		$this->_setupDescription('Najlepsza baza teatrów w Polsce. Zobacz teatry w swoim mieście. Sprawdź repertuar. Oceń je.');
+
 		return $this->forward()->dispatch(static::CONTROLLER_NAME, array('action' => 'authenticate'));
 	}
 
@@ -223,7 +226,9 @@ class UserController extends AbstractActionController
 			return $this->forward()->dispatch(static::CONTROLLER_NAME, array('action' => 'authenticate'));
 		}
 
-		// TODO: Add the redirect parameter here...
+		$this->_setupTitle('Rejestracja');
+		$this->_setupDescription('Najlepsza baza teatrów w Polsce. Zobacz teatry w swoim mieście. Sprawdź repertuar. Oceń je.');
+
 		return $this->redirect()->toUrl($this->url()->fromRoute(static::ROUTE_LOGIN) . ($redirect ? '?redirect='.$redirect : ''));
 	}
 
@@ -441,5 +446,22 @@ class UserController extends AbstractActionController
 	{
 		$this->changeEmailForm = $changeEmailForm;
 		return $this;
+	}
+
+	protected function _setupTitle($title, $defaultTitle = 'TerazTeatr', $separator = ' | ')
+	{
+		$headTitle = $this->getServiceLocator()->get('viewHelperManager')->get('headTitle');
+		$headTitle->setSeparator($separator);
+		if (!empty($title)) {
+			$headTitle->append($title);
+		}
+		if (!empty($defaultTitle)) {
+			$headTitle->append($defaultTitle);
+		}
+	}
+
+	protected function _setupDescription($description)
+	{
+		$this->getServiceLocator()->get('viewHelperManager')->get('headMeta')->appendName('description', $description);
 	}
 }
