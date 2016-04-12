@@ -33,6 +33,7 @@
 									</div>
 									<?php elseif ($element instanceof Zend\Form\Element\Checkbox): ?>
 									<div class="row checkbox">
+										<?php $element->setLabelOptions(array('disable_html_escape' => true)); ?>
 										<?php echo $this->formCheckbox($element) . $this->formLabel($element) . $this->formElementErrors($element) ?>
 									</div>
 									<?php elseif ($element instanceof Zend\Form\Element\Captcha): ?>
